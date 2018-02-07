@@ -22,7 +22,6 @@ public class MainControllerTest {
     @InjectMocks
     private MainController unit;
 
-
     @Before
     public void setUp() throws Exception {
         InternalResourceViewResolver resolver = new InternalResourceViewResolver();
