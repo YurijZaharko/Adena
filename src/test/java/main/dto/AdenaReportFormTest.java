@@ -1,6 +1,8 @@
 package main.dto;
 
 import main.entity.CharacterL2;
+import main.entity.ProductAndPriceHolder;
+import main.entity.ProductL2;
 import org.junit.Before;
 import org.junit.Test;
 import org.meanbean.lang.EquivalentFactory;
@@ -8,6 +10,7 @@ import org.meanbean.lang.Factory;
 import org.meanbean.test.*;
 
 import java.util.Calendar;
+import java.util.Collections;
 
 public class AdenaReportFormTest {
     private Configuration configuration;
@@ -57,10 +60,20 @@ public class AdenaReportFormTest {
             characterL2.setName("testName");
             adenaReportForm.setCharacterL2(characterL2);
 
+            ProductAndPriceHolder productAndPriceHolder = new ProductAndPriceHolder();
+            productAndPriceHolder.setProductPrice(222L);
+            adenaReportForm.setProductAndPriceHolders(Collections.singletonList(productAndPriceHolder));
+
             Long testAdenaQuantity = 15000L;
             adenaReportForm.setAdenaQuantity(testAdenaQuantity);
 
-            adenaReportForm.setCalendar(Calendar.getInstance());
+            Calendar testDate = Calendar.getInstance();
+            testDate.set(2000, 1, 1);
+            adenaReportForm.setCalendar(testDate);
+
+            ProductL2 productL2 = new ProductL2();
+            productL2.setProductName("testName");
+            adenaReportForm.setProductL2s(Collections.singleton(productL2));
 
             return adenaReportForm;
         }
