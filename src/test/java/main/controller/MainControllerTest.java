@@ -34,7 +34,7 @@ public class MainControllerTest {
         mockMvc = MockMvcBuilders.standaloneSetup(this.unit)
                 .setViewResolvers(resolver)
                 .build();
-        }
+    }
 
     @Test
     public void main() throws Exception {
