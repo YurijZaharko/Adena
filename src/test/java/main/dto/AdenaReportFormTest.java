@@ -68,7 +68,7 @@ public class AdenaReportFormTest {
             adenaReportForm.setAdenaQuantity(testAdenaQuantity);
 
             Calendar testDate = Calendar.getInstance();
-            testDate.set(2000, 1, 1);
+            testDate.set(2000, Calendar.JANUARY, 1);
             adenaReportForm.setCalendar(testDate);
 
             ProductL2 productL2 = new ProductL2();
