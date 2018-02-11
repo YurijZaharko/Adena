@@ -33,13 +33,13 @@ public class CharacterL2Test {
     @Test
     public void equalsCorrectness() throws Exception {
         EqualsMethodTester tester = new EqualsMethodTester();
-        tester.testEqualsMethod(new CharacterL2EquvivalentFactory(), configuration, "id", "adenaReports");
+        tester.testEqualsMethod(new CharacterL2EquivalentFactory(), configuration, "id", "adenaReports");
     }
 
     @Test
     public void hashCodeCorrectness() throws Exception {
         HashCodeMethodTester tester = new HashCodeMethodTester();
-        tester.testHashCodeMethod(new CharacterL2EquvivalentFactory());
+        tester.testHashCodeMethod(new CharacterL2EquivalentFactory());
     }
 
     private class AdenaReportsFactory implements Factory<Set<AdenaReport>>{
@@ -52,7 +52,7 @@ public class CharacterL2Test {
         }
     }
 
-    private class CharacterL2EquvivalentFactory implements EquivalentFactory<CharacterL2>{
+    private class CharacterL2EquivalentFactory implements EquivalentFactory<CharacterL2>{
 
         @Override
         public CharacterL2 create() {
