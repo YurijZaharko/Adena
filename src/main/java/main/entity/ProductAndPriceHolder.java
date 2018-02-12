@@ -8,8 +8,10 @@ import javax.persistence.*;
 @Getter
 @Setter
 @EqualsAndHashCode(exclude = {"id"})
-@ToString()
+@ToString
+@Builder
 @NoArgsConstructor
+@AllArgsConstructor
 public class ProductAndPriceHolder {
 
     @Id
