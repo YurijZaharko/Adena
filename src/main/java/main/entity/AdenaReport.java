@@ -9,9 +9,11 @@ import java.util.Set;
 @Entity
 @Getter
 @Setter
-@EqualsAndHashCode(exclude = {"id", "productAndPriceHolders"})
+@EqualsAndHashCode(exclude = {"id", "productAndPriceHolders", "calendar"})
 @ToString(exclude = {"productAndPriceHolders"})
 @NoArgsConstructor
+@AllArgsConstructor
+@Builder
 public class AdenaReport {
 
     @Id

@@ -6,10 +6,13 @@ import javax.persistence.*;
 import java.util.Set;
 
 @Entity
-@Data
+@Setter
+@Getter
 @EqualsAndHashCode(exclude = {"id", "productAndPriceHolders"})
 @ToString(exclude = {"id", "productAndPriceHolders"})
 @NoArgsConstructor
+@AllArgsConstructor
+@Builder
 public class ProductL2 {
 
     @Id

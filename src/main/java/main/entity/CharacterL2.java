@@ -12,6 +12,8 @@ import java.util.Set;
 @EqualsAndHashCode(exclude = {"id", "adenaReports"})
 @ToString(exclude = {"adenaReports"})
 @NoArgsConstructor
+@AllArgsConstructor
+@Builder
 public class CharacterL2 {
 
     @Id
