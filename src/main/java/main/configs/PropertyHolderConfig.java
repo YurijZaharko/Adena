@@ -7,8 +7,9 @@ import org.springframework.core.io.ClassPathResource;
 
 @Configuration
 public class PropertyHolderConfig {
+    
     @Bean
-    public PropertyPlaceholderConfigurer propertyPlaceholderConfigurer(){
+    public PropertyPlaceholderConfigurer propertyPlaceholderConfigurer() {
         PropertyPlaceholderConfigurer propertyPlaceholderConfigurer = new PropertyPlaceholderConfigurer();
         propertyPlaceholderConfigurer.setLocations(
                 new ClassPathResource("properties/db.properties"),
