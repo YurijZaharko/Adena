@@ -7,7 +7,7 @@ import org.springframework.core.io.ClassPathResource;
 
 @Configuration
 public class PropertyHolderConfig {
-    
+
     @Bean
     public PropertyPlaceholderConfigurer propertyPlaceholderConfigurer() {
         PropertyPlaceholderConfigurer propertyPlaceholderConfigurer = new PropertyPlaceholderConfigurer();
