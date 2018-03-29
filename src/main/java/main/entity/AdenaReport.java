@@ -23,7 +23,9 @@ public class AdenaReport {
     @ManyToOne(fetch = FetchType.LAZY)
     private CharacterL2 characterL2;
 
-    @OneToMany(mappedBy = "adenaReport", cascade = CascadeType.ALL)
+    @OneToMany(mappedBy = "adenaReport",
+            cascade = CascadeType.ALL,
+            orphanRemoval = true)
     private Set<ProductAndPriceHolder> productAndPriceHolders;
 
     private long adenaQuantity;
