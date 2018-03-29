@@ -43,12 +43,11 @@ public class AdenaReportServiceImpl implements AdenaReportService {
     @Override
     public void saveReport(@NonNull AdenaReportForm adenaReportForm) {
         AdenaReport adenaReport = convertForm(adenaReportForm);
-        adenaReportRepository.save(adenaReport);
-
         List<ProductAndPriceHolder> productAndPriceHolders = adenaReportForm.getProductAndPriceHolders();
         Set<ProductAndPriceHolder> set = new HashSet<>(Optional.ofNullable(productAndPriceHolders).orElseGet(Collections::emptyList));
         set.forEach(productAndPriceHolder -> productAndPriceHolder.setAdenaReport(adenaReport));
-        productAndPriceHolderService.save(set);
+        adenaReport.setProductAndPriceHolders(set);
+        save(adenaReport);
     }
 
 
@@ -65,6 +64,11 @@ public class AdenaReportServiceImpl implements AdenaReportService {
     @Override
     public void delete(@NonNull Long id) {
         adenaReportRepository.delete(id);
+    }
+
+    @Override
+    public void save(@NonNull AdenaReport adenaReport) {
+        adenaReportRepository.saveAndFlush(adenaReport);
     }
 
     @Override

@@ -23,6 +23,8 @@ public interface AdenaReportService {
 
     void delete(Long id);
 
+    void save(AdenaReport adenaReport);
+
     @Transactional(readOnly = true, propagation = Propagation.MANDATORY)
     List<AdenaReport> findReportForChart(Calendar threeMonthAgo);
 }
