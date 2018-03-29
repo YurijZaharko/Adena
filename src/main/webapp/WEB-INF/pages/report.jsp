@@ -15,17 +15,26 @@
             <div class="col-sm-3 ">
                 <form:input path="adenaQuantity"/>
             </div>
+            <div class="col-sm-5 ">
+                <form:errors path="adenaQuantity" cssStyle="color: red"/>
+            </div>
         </div>
+        <div class="form-group row">
+            <form:checkboxes path="productL2s" items="${productL2List}" itemLabel="productName"
+                             element="span class='form-check'"/>
+            <div class="col-sm-5 ">
+                <form:errors path="productL2s" cssStyle="color: red"/>
+            </div>
+        </div>
+
         <div class="row">
             <label path="adenaSold" for="adenaSold" class="col-sm-2">Adena sold</label>
             <div class="col-sm-3 ">
                 <form:input path="adenaSold"/>
             </div>
-        </div>
-
-        <div class="form-group row">
-            <form:checkboxes path="productL2s" items="${productL2List}" itemLabel="productName"
-                             element="span class='form-check'"/>
+            <div class="col-sm-5 ">
+                <form:errors path="adenaSold" cssStyle="color: red"/>
+            </div>
         </div>
         <div class="form-group row">
             <div class="col-sm-3">
@@ -46,6 +55,7 @@
             </tr>
             </thead>
             <tbody>
+            <form:errors path="productAndPriceHolders" cssStyle="color: red"/>
             <c:forEach items="${adenaReportForm.productAndPriceHolders}" var="holder" varStatus="status">
                 <tr>
                     <th>${status.count}</th>
