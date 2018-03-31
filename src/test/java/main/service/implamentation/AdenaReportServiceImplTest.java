@@ -134,11 +134,6 @@ public class AdenaReportServiceImplTest {
         Assert.assertEquals(adenaReport, adenaReportActual);
         Assert.assertEquals(adenaReport.getId(), adenaReportActual.getId());
 
-        Mockito.verify(productAndPriceHolderService, Mockito.times(1)).save(setArgumentCaptor.capture());
-        final Set<ProductAndPriceHolder> productAndPriceHolderSetActual = setArgumentCaptor.getValue();
-        Assert.assertNotNull(productAndPriceHolderSetActual);
-        Assert.assertEquals("Size of Set must be 1", 1, productAndPriceHolderSetActual.size());
-        final AdenaReport adenaReport = new ArrayList<>(productAndPriceHolderSetActual).get(0).getAdenaReport();
         Assert.assertEquals(adenaReport, adenaReport);
     }
 

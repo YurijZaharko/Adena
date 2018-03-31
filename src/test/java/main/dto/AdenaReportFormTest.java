@@ -3,6 +3,7 @@ package main.dto;
 import main.entity.CharacterL2;
 import main.entity.ProductAndPriceHolder;
 import main.entity.ProductL2;
+import main.entity.constants.ServerNames;
 import org.junit.Before;
 import org.junit.Test;
 import org.meanbean.lang.EquivalentFactory;
@@ -35,7 +36,7 @@ public class AdenaReportFormTest {
     public void equalsCorrectness() throws Exception {
         EqualsMethodTester tester = new EqualsMethodTester();
         tester.testEqualsMethod(new AdenaReportFormFactory(), configuration,
-                "id", "productAndPriceHolders", "productL2s");
+                "id", "productAndPriceHolders", "productL2s", "calendar");
     }
 
     @Test
@@ -55,17 +56,19 @@ public class AdenaReportFormTest {
         @Override
         public AdenaReportForm create() {
             AdenaReportForm adenaReportForm = new AdenaReportForm();
+            adenaReportForm.setId(555L);
 
-            CharacterL2 characterL2 = new CharacterL2();
-            characterL2.setName("testName");
-            adenaReportForm.setCharacterL2(characterL2);
+            adenaReportForm.setCharacterL2(CharacterL2.builder().name("testName").serverNames(ServerNames.AIRIN).build());
 
             ProductAndPriceHolder productAndPriceHolder = new ProductAndPriceHolder();
             productAndPriceHolder.setProductPrice(222L);
             adenaReportForm.setProductAndPriceHolders(Collections.singletonList(productAndPriceHolder));
 
-            Long testAdenaQuantity = 15000L;
+            long testAdenaQuantity = 15000L;
             adenaReportForm.setAdenaQuantity(testAdenaQuantity);
+
+            long testAdenaSold = 500L;
+            adenaReportForm.setAdenaSold(testAdenaSold);
 
             Calendar testDate = Calendar.getInstance();
             testDate.set(2000, Calendar.JANUARY, 1);

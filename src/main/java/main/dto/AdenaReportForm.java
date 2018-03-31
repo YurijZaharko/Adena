@@ -14,7 +14,7 @@ import java.util.Set;
 
 @Data
 @ToString(exclude = {"id", "productAndPriceHolders", "adenaQuantity", "productL2s"})
-@EqualsAndHashCode(exclude = {"id", "productAndPriceHolders", "productL2s"})
+@EqualsAndHashCode(exclude = {"id", "productAndPriceHolders", "productL2s", "calendar"})
 public class AdenaReportForm {
     private long id;
     private List<ProductAndPriceHolder> productAndPriceHolders;

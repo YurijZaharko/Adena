@@ -47,7 +47,7 @@ public class AdenaReportServiceImpl implements AdenaReportService {
         Set<ProductAndPriceHolder> set = new HashSet<>(Optional.ofNullable(productAndPriceHolders).orElseGet(Collections::emptyList));
         set.forEach(productAndPriceHolder -> productAndPriceHolder.setAdenaReport(adenaReport));
         adenaReport.setProductAndPriceHolders(set);
-        save(adenaReport);
+        adenaReportRepository.save(adenaReport);
     }
 
 

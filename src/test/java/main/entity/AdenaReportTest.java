@@ -36,7 +36,7 @@ public class AdenaReportTest {
     @Test
     public void equalsCorrectness() throws Exception {
         EqualsMethodTester tester = new EqualsMethodTester();
-        tester.testEqualsMethod(new AdenaReportEquivalentFactory(), configuration,  "id", "productAndPriceHolders");
+        tester.testEqualsMethod(new AdenaReportEquivalentFactory(), configuration,  "id", "productAndPriceHolders", "calendar");
     }
 
     private class CharacterL2Factory implements Factory<CharacterL2> {
