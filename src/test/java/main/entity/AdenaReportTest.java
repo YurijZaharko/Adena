@@ -84,7 +84,7 @@ public class AdenaReportTest {
             adenaReport.setAdenaSold(100L);
 
             Calendar calendar = Calendar.getInstance();
-            calendar.set(2000, Calendar.JANUARY, 1);
+            calendar.setTimeInMillis(1234567890001L);
             adenaReport.setCalendar(calendar);
 
             return adenaReport;
