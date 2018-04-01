@@ -71,7 +71,7 @@ public class AdenaReportFormTest {
             adenaReportForm.setAdenaSold(testAdenaSold);
 
             Calendar testDate = Calendar.getInstance();
-            testDate.set(2000, Calendar.JANUARY, 1);
+            testDate.setTimeInMillis(1234567890001L);
             adenaReportForm.setCalendar(testDate);
 
             ProductL2 productL2 = new ProductL2();
